@@ -6,18 +6,18 @@ on:
 
 jobs:
   evaluate:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     timeout-minutes: 1
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           fetch-depth: 1
 
       - name: Collect screenshots
-        uses: akosdudas/ahk-action-publish-result-pr@master
+        uses: akosdudas/ahk-action-publish-result-pr@v1
         with:
           image-extension: ".png"
           input-file: null
