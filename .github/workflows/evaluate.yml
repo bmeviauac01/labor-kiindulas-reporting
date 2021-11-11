@@ -19,8 +19,8 @@ jobs:
           fetch-depth: 1
 
       - name: Collect screenshots
-        uses: akosdudas/ahk-action-publish-result-pr@v1
+        uses: docker://ghcr.io/akosdudas/ahk-publish-results-pr:v1
         with:
-          image-extension: ".png"
-          input-file: null
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          AHK_IMAGEEXT: ".png"
+          AHK_RESULTFILE: ""
